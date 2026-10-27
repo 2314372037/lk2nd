@@ -3470,7 +3470,7 @@ void cmd_boot(const char *arg, void *data, unsigned sz)
 	#endif
 
 	boot_linux((void*) hdr->kernel_addr, (void*) hdr->tags_addr,
-		   (const char*) hdr->cmdline, board_machtype(),
+		   (const char*) hdr->cmdline, 0xffffffff,
 		   (void*) hdr->ramdisk_addr, hdr->ramdisk_size,
 		   boot_type);
 
